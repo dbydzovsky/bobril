@@ -11,10 +11,19 @@ export interface IContext extends b.IBobrilCtx {
 }
 
 export const create = b.createComponent<IData>({
-    id: "Login",
+    id: "Wrapper",
     render(ctx: IContext, me: b.IBobrilNode) {
         me.children = [
-            "login",
+            {
+                className: "wrapper",
+                children: [
+                    header(),
+                    me.data.activeRouteHandler(), // this must be as children, because it returns content of nested routes
+                    footer(),
+                ]
+            },
+
         ];
+
     }
 });

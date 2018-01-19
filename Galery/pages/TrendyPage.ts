@@ -14,15 +14,8 @@ export const create = b.createComponent<IData>({
     id: "trendy",
     render(ctx: IContext, me: b.IBobrilNode) {
         me.children = [
-            {
-                className: "wrapper",
-                children: [
-                    header(),
-                    panel(),
-                    footer(),
-                ]
-            }
+            "this is trendy page",
+            panel()
         ];
-        me.data.activeRouteHandler()
     }
 });

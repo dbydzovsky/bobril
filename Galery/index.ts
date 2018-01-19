@@ -1,6 +1,10 @@
 import * as b from 'bobril';
 import * as homePage from './pages/HomePage';
+import * as wrapperPage from './pages/WrapperPage';
 import * as trendyPage from './pages/TrendyPage';
+import * as loginPage from './pages/LoginPage';
+import * as userPage from './pages/UserPage';
+import * as galleryPage from './pages/GalleryPage';
 
 b.asset("assets/bootstrap.min.css");
 
@@ -33,10 +37,12 @@ export const create = b.createComponent<IData>({
 });
 
 
-b.routes(
-    b.route({handler: homePage.create }, [
-        b.route( {handler: trendyPage.create, url: '/', name: '/'  }),
-        b.route({ name: 'trendy', handler: trendyPage.create }),
+b.routes([
+    b.route( {handler: loginPage.create, url: "/login", name: "login"}),
+    b.route({handler: wrapperPage.create, url: "/" }, [
+        b.route( { handler: trendyPage.create, url: '/trendy', name: 'trendy'  }),
+        b.route({ name: 'gallery', url: '/gallery', handler: galleryPage.create }),
+        b.route({ name: 'userpage', url: '/user', handler: userPage.create }),
         b.routeDefault({handler: homePage.create})
     ])
-);
+]);

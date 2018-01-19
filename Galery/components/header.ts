@@ -1,6 +1,5 @@
 import * as b from 'bobril'
 import {create as HeaderField} from "./headerField";
-import {create as login} from "../bordel/login";
 
 export interface IData {
 }

@@ -14,16 +14,9 @@ export const create = b.createComponent<IData>({
     id: "Home",
     render(ctx: IContext, me: b.IBobrilNode) {
         me.children = [
-            {
-                className: "wrapper",
-                children: [
-                    header(),
-                    panel(),
-                    footer(),
-                ]
-            }
+            "home",
+            panel()
         ];
-        me.data.activeRouteHandler()
     }
 });
 
